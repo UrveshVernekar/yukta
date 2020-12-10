@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+body {
+  position: fixed; 
+  overflow-y: scroll;
+  width: 100%;
+}
+
+body {
+  background: #ee9ca7;
+}
+
+.full-thing {
+  transform: scale(3.5);
+}
+
+#cake {
+  display: flex;
+  position: relative;
+  margin: -10em auto 0 auto;
+  top: -73px;
+}
+
+/* ============================================== Candle
+*/
+
+.candle {
+  background: #ffffff;
+  border-radius: 10px;
+  position: absolute;
+  top: 315px;
+  left: 50%;
+  margin-left: -2.4px;
+  margin-top: -8.33333333px;
+  width: 5px;
+  height: 35px;
+  transform: translateY(-300px);
+  backface-visibility: hidden;
+  animation: in 500ms 6s ease-out forwards;
+}
+.candle:after,
+.candle:before {
+  background: rgba(255, 0, 0, 0.4);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2.22222222px;
+}
+.candle:after {
+  top: 25%;
+  left: 0;
+}
+.candle:before {
+  top: 45%;
+  left: 0;
+}
+
+/* ============================================== Fire
+*/
+
+.candle-flame {
+  border-radius: 100%;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  margin-left: -3.18px;
+  width: 6.66666667px;
+  height: 18px;
+}
+.candle-flame:nth-child(1) {
+  animation: candle-flame 2s 6.5s infinite;
+}
+.candle-flame:nth-child(2) {
+  animation: candle-flame 1.5s 6.5s infinite;
+}
+.candle-flame:nth-child(3) {
+  animation: candle-flame 1s 6.5s infinite;
+}
+.candle-flame:nth-child(4) {
+  animation: candle-flame 0.5s 6.5s infinite;
+}
+.candle-flame:nth-child(5) {
+  animation: candle-flame 0.2s 6.5s infinite;
+}
+
+/* ============================================== Animation Fire
+*/
+
+@keyframes candle-flame {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    transform: translateY(-20px) scale(0);
+  }
+}
+
+@keyframes in {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.text {
+  color: #9c0000;  
+  font-size: 5em;
+  align-items: center;
+  font-family: 'Cookie';
+}  
+
+
+.text-animation {
+  font-size: 100px;
+  position: absolute;
+  top: 3rem;
+  left: 26%;
+  opacity: 0;
+  animation: fadeInOut 4s infinite;
+  animation-delay: 7s;
+  /*animation-name: fadeInOut;
+  animation-duration: 4s;
+  animation-iteration-count: 100;*/
+}
+
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
